@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <style>
+      h1 {
+        font-family: Gigi;
+      }
+
+      .accordion {
+        font-family: Consolas;
+        width: 450px;
+      }
+      .accordion-title {
+        color: yellow;
+        background: rgb(73, 170, 73);
+        padding: 10px;
+        cursor: pointer;
+        font-family: Harrington;
+        font-size: 30px;
+      }
+      .accordion-title:after {
+        content: "\22b5";
+        color: aqua;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .accordion-content {
+        background-color: blanchedalmond;
+        padding: 10px;
+        display: none;
+      }
+
+      .accordion-item.active .accordion-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Example of Accordion</h1>
+    <div class="accordion">
+      <div class="accordion-item">
+        <div class="accordion-title">Accordion Title 1</div>
+        <div class="accordion-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo placeat,
+          quisquam ipsa cupiditate, consequuntur officiis enim asperiores
+          molestias eius sint veritatis tempore minus reiciendis, laudantium
+          nobis commodi tempora. Laboriosam vero dicta voluptate? Deserunt
+          officiis laborum ut minima eaque. Sunt, eius!
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-title">Accordion Title 2</div>
+        <div class="accordion-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo placeat,
+          quisquam ipsa cupiditate, consequuntur officiis enim asperiores
+          molestias eius sint veritatis tempore minus reiciendis, laudantium
+          nobis commodi tempora. Laboriosam vero dicta voluptate? Deserunt
+          officiis laborum ut minima eaque. Sunt, eius!
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-title">Accordion Title 3</div>
+        <div class="accordion-content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo placeat,
+          quisquam ipsa cupiditate, consequuntur officiis enim asperiores
+          molestias eius sint veritatis tempore minus reiciendis, laudantium
+          nobis commodi tempora. Laboriosam vero dicta voluptate? Deserunt
+          officiis laborum ut minima eaque. Sunt, eius!
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title">Accordion Title 4</div>
+          <div class="accordion-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
+            placeat, quisquam ipsa cupiditate, consequuntur officiis enim
+            asperiores molestias eius sint veritatis tempore minus reiciendis,
+            laudantium nobis commodi tempora. Laboriosam vero dicta voluptate?
+            Deserunt officiis laborum ut minima eaque. Sunt, eius!
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const accordionItems = document.querySelectorAll(".accordion-item");
+      accordionItems.forEach((item) => {
+        const title = item.querySelector(".accordion-title");
+        const content = item.querySelector(".accordion-content");
+
+        title.addEventListener("click", () => {
+          for (var i = 0; i < accordionItems.length; i++) {
+            if (accordionItems[i] != item) {
+              accordionItems[i].classList.remove("active");
+            } else {
+              item.classList.toggle("active");
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
